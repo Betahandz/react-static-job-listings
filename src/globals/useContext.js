@@ -7,7 +7,6 @@ const AppContext = createContext();
 // create app provider
 const AppProvider = ({children}) => {
     const [ employees, setEmployees ] = useState([]);
-    
 
     
     const [ filterate, setFilterate ] = useState(['Python', 'Javascript', 'Frontend', 'Senior']);
