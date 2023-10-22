@@ -1,0 +1,45 @@
+.programmer {
+    border-bottom: solid 2px var(--dark-grayish-cyan);
+    position: relative;
+}
+
+.featured {
+    border-left: solid 5px var(--desaturate-dark-cyan);
+}
+
+.logo {
+    top: -35px;
+    width: 50px;
+    aspect-ratio: 1/1;
+    position: absolute;
+}
+
+.position:hover {
+    color: var(--desaturate-dark-cyan);
+    cursor: pointer;
+}
+
+.time-posted {
+    /* list-style: none; */
+}
+
+.day {
+    list-style: none;
+}
+
+.lang {
+    gap: 5px;
+}
+
+@media screen and (width > 1200px) {
+    .programmer {
+        gap: 20px;
+        border-bottom: unset;
+    }
+
+    .logo {
+        position: unset;
+        width: fit-content;
+        aspect-ratio: 1/1;
+    }
+}

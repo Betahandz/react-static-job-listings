@@ -1,0 +1,12 @@
+.roles {
+    cursor: pointer;
+    /* background-color: var(--light-grayish-cyan-filter-tablets); */
+}
+
+.roles:hover {
+    background-color: var(--desaturate-dark-cyan);
+}
+
+.roles:hover .text {
+    color: white !important;
+}

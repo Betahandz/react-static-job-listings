@@ -1,13 +1,38 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* @font-face {
+    font-family: ;
+    src: url();
+} */
+
+:root {
+    /* typography */
+
+    /* color/paint */
+    --desaturate-dark-cyan: hsl(180, 29%, 50%);
+    --light-grayish-cyan-bg: hsl(180, 52%, 96%);
+    --light-grayish-cyan-filter-tablets: hsl(180, 30%, 88%);
+    --dark-grayish-cyan: hsl(180, 8%, 52%);
+    --very-dark-grayish-cyan: hsl(180, 14%, 20%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    background-color: var(--light-grayish-cyan-bg);
+    min-height: 100vh;
+}
+
+/*  BACKGROUD COLOR */
+.bg-dark-cyan {
+    background-color: var(--desaturate-dark-cyan);
+}
+
+.tablets {
+    background-color: var(--light-grayish-cyan-filter-tablets);
+}
+
+/* FONT COLORS */
+.text-c-dark {
+    color: var(--desaturate-dark-cyan)
+}
+
+.text-gray {
+    color: var(--dark-grayish-cyan)
 }
