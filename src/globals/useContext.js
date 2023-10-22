@@ -12,6 +12,7 @@ const AppProvider = ({children}) => {
     const [ filterate, setFilterate ] = useState(['Python', 'Javascript', 'Frontend', 'Senior']);
     
     
+    
     useEffect(() => {
         setEmployees(data);
     }, [])
