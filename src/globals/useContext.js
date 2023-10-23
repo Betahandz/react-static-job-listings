@@ -6,25 +6,38 @@ const AppContext = createContext();
 
 // create app provider
 const AppProvider = ({children}) => {
-    const [ employees, setEmployees ] = useState(data);
+    const [ employees, setEmployees ] = useState([]); // normal data all the data
+    const [ filterate, setFilterate ] = useState([]); // array of data to be filtered
 
-    
-    const [ filterate, setFilterate ] = useState([]);
-    
     useEffect(() => {
-        const newEmployees = data.find(item => {
-            const { role, level, languages, tools } = item;
-
-            return role;
-        })
-        console.log(newEmployees);
+        if(filterate.length < 1) {
+            setEmployees(prev => data);
+        } else {
+            let  newEmployees = data.map(infos => {
+                const {role, level, languages, tools } = infos;
+                const checkArray = [role, level, ...languages, ...tools];
+                let employee;
+                filterate.forEach(item => {
+                    for(let x = 0; x < checkArray.length; x++){
+                        if(item === checkArray[x]) {
+                            employee = infos;
+                        }
+                    }
+                })
+                return employee;
+            }) // new employee will bring some undefined values
+            newEmployees = newEmployees.filter(workers => workers !== undefined); // filtering the undefined values
+            setEmployees(newEmployees); // setting data to the new filtered values
+        }
     }, [filterate])
-    
+
     const filtration = (e) => {
         let filterItem = e.currentTarget.textContent;
-        const sieve = new Set([...filterate]);
-        sieve.add(filterItem);
-        setFilterate(prev => [...sieve]);
+        if(filterate.includes(filterItem)) {
+            return;
+        } else {
+            setFilterate(prev => [...prev, filterItem]);
+        }
     }
 
     const clearSingle = (e) => {
