@@ -5,7 +5,7 @@ function Bar({text}) {
     const {clearSingle} = useGlobalContext();
     return (
         <div className='specialty tablets d-flex align-items-stretch'>
-            <span className='text p-1 text-c-dark'>
+            <span className='text p-1 text-c-dark text-lmed'>
                 <b>{text}</b>
             </span>
             <span className='close badge bg-dark-cyan rounded-0 d-flex align-items-center justify-content-center' onClick={(e) => clearSingle(e)}>

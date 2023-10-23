@@ -23,8 +23,8 @@ function App() {
                             })
                         }
                     </div>
-                    <div className='clear d-flex bg-dark align-items-center justify-content-center w-25'>
-                        <button className='clear-btn btn text-c-dark' onClick={() => clearAll()}><b>Clear</b></button>
+                    <div className='clear d-flex align-items-center justify-content-center w-25'>
+                        <button className='clear-btn btn text-c-dark text-lreg' onClick={() => clearAll()}><b>Clear</b></button>
                     </div>
                 </div>
 

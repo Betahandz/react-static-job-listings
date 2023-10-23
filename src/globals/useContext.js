@@ -6,49 +6,25 @@ const AppContext = createContext();
 
 // create app provider
 const AppProvider = ({children}) => {
-    const [ employees, setEmployees ] = useState([]);
+    const [ employees, setEmployees ] = useState(data);
 
     
-    const [ filterate, setFilterate ] = useState(['Python', 'Javascript', 'Frontend', 'Senior']);
-    
-    
+    const [ filterate, setFilterate ] = useState([]);
     
     useEffect(() => {
-        setEmployees(data);
-    }, [])
+        const newEmployees = data.find(item => {
+            const { role, level, languages, tools } = item;
+
+            return role;
+        })
+        console.log(newEmployees);
+    }, [filterate])
     
     const filtration = (e) => {
         let filterItem = e.currentTarget.textContent;
         const sieve = new Set([...filterate]);
         sieve.add(filterItem);
         setFilterate(prev => [...sieve]);
-        setEmployees(prev => {
-            const newEmployees = [];
-            data.forEach(item => {
-                const { role, level, languages, tools } = item;
-                const checkArray = [role, level, ...languages, ...tools];
-                console.log(filterate);
-                // filterate.map(filtItem => {
-                //     const check = checkArray.includes(filtItem);
-                //     if(check) {
-                //         return item;
-                //     }
-                // })
-                filterate.forEach(filtItem => {
-
-                    checkArray.filter(checkItem => {
-                        if(filtItem === checkItem) {
-                            // console.log(item);
-                            // return item;
-                            newEmployees.push(item);
-                        }
-                    })
-                })
-            })
-
-            console.log(newEmployees);
-            return newEmployees;
-        })
     }
 
     const clearSingle = (e) => {

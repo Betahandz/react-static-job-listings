@@ -8,7 +8,7 @@ function Badge({text}) {
         <span className='roles badge p-2 tablets' onClick={(e) => {
             filtration(e);
         }}>
-            <p className='text m-0 text-c-dark'><b>{text}</b></p>
+            <p className='text m-0 text-c-dark text-lmed'><b>{text}</b></p>
         </span>
     )
 }
