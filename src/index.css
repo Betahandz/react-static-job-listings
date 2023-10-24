@@ -63,3 +63,8 @@ body {
 .text-lreg {
     font-family: lreg;
 }
+
+#root {
+    max-width: 1200px;
+    margin: auto;
+}

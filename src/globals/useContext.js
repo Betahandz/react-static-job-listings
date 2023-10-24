@@ -13,14 +13,14 @@ const AppProvider = ({children}) => {
         if(filterate.length < 1) {
             setEmployees(prev => data);
         } else {
-            let  newEmployees = data.map(infos => {
-                const {role, level, languages, tools } = infos;
+            let  newEmployees = data.map(singledata => {
+                const {role, level, languages, tools } = singledata;
                 const checkArray = [role, level, ...languages, ...tools];
                 let employee;
                 filterate.forEach(item => {
                     for(let x = 0; x < checkArray.length; x++){
                         if(item === checkArray[x]) {
-                            employee = infos;
+                            employee = singledata;
                         }
                     }
                 })
@@ -49,7 +49,7 @@ const AppProvider = ({children}) => {
     }
     
 
-    const clearAll = () => {
+    const setToDefault = () => {
         setFilterate(prev => []);
         setEmployees(prev => data);
     }
@@ -58,7 +58,7 @@ const AppProvider = ({children}) => {
         employees,
         filtration,
         filterate,
-        clearAll,
+        setToDefault,
         clearSingle
     }
 

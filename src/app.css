@@ -27,7 +27,7 @@
     gap: 10px;
 }
 
-@media screen and (width > 1200px) {
+@media screen and (width > 700px) {
     .bg {
         background-image: url(./assets/images/bg-header-desktop.svg);
     }
