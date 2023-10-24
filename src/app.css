@@ -1,3 +1,7 @@
+.workers-display {
+    max-width: 1300px;
+}
+
 .bg {
     min-height: 150px;
     background-color: var(--desaturate-dark-cyan);
